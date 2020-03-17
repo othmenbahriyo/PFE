@@ -33,7 +33,7 @@
               
 
             ],
-            "scripts": []
+            "scripts": ["../bower_components/jquery/dist/jquery.min.js"]
           },
           "configurations": {
             "production": {
