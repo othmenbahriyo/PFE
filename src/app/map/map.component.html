@@ -1,0 +1,291 @@
+	<meta property="og:site_name" content="Car Park Company">
+	<meta property="og:url" content="http://trials.vevs.website/web-demo/car-parking-website/">
+	<meta property="og:title" content="Car Park Company | Start">
+	<meta property="og:description" content="Welcome to Car Parking Company website.">
+	<meta property="og:image" content="http://trials.vevs.website/web-demo/car-parking-website/app/web/upload/medium/parking-lot-594-1578941898.jpg">
+	<meta property="og:type" content="website">
+	<meta property="og:locale" content="en">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="Car Park Company | Start">
+	<meta name="twitter:description" content="Welcome to Car Parking Company website.">
+	<meta name="twitter:image:src" content="http://trials.vevs.website/web-demo/car-parking-website/app/web/upload/medium/parking-lot-594-1578941898.jpg">
+	<meta name="twitter:url" content="http://trials.vevs.website/web-demo/car-parking-website/">
+	<meta name="twitter:domain" content="">	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<link rel="shortcut icon" type="image/x-icon" href="http://trials.vevs.website/web-demo/car-parking-website/app/web/upload/medium/cp-favicon-188.png">
+	<base href="http://trials.vevs.website/web-demo/car-parking-website/1/">
+
+<body class="" data-action="pjActionIndex" data-page="home" data-editor="http://trials.vevs.website/web-demo/car-parking-website/index.php?controller=pjCmsEditor&amp;action=pjActionLoadScript&amp;web_page_id=1&amp;locale_id=4&amp;fields=front_fields&amp;template=template_1">
+		<div class="wrapper">
+        	<div class="hero-section cms-e-section" style="background-image: url(&quot;http://trials.vevs.website/web-demo/car-parking-website/app/web/upload/medium/7-431-1578941898.jpg&quot;);">
+		<img src="http://trials.vevs.website/web-demo/car-parking-website/app/web/upload/medium/7-431-1578941898.jpg" alt="" title="" data-id="431" class="hero-img hidden wc-image" loading="eager">
+		
+		<div class="container">
+			<h1 class="h1"><span class="wc-editable" data-pk="ws_home_slide_title_1" data-type="text">Book your parking space</span></h1>
+
+			<div class="hero-text-desc"><span class="wc-editable" data-pk="ws_home_slide_desc_1" data-type="plaintext">Choose location, date, time and a parking spot!</span></div>
+
+            <div id="pjCpContainer"><div class="row">
+                <div class="col-lg-10 col-lg-offset-1 col-xs-12">
+                    <div class="form cms-e-section">
+                        <form id="pjCpSearchForm" action="#" method="post" class="pjCpSearchForm" novalidate="novalidate">
+                            <div id="pjCpCalendarLocale" style="display: none;" data-months="January_February_March_April_May_June_July_August_September_October_November_December" data-days="Su_Mo_Tu_We_Th_Fr_Sa"></div>
+                            
+                            <div class="form-group">
+                                <label for="location_id" class="formLabel"><span class="wc-editable" data-pk="ws_location" data-type="text">Location</span></label>
+                                    
+                                <select name="location_id" id="location_id" class="form-control form-control-lg" [(ngModel)]="reserv.name" name="name" >
+                                    <option value="Candy Led">Candy Led</option>
+                                    <option value="Treetronix">Treetronix</option>				
+                                </select>
+                                                        <p>
+                                        <i class="glyphicon glyphicon-map-marker"></i>
+                                        
+                                        <span class="wc-editable" data-pk="ws_cannot_find_location" data-type="text">Can't find the location?</span> <a routerLink="pres"><span class="wc-editable" data-pk="ws_view_map" data-type="text">View Map</span></a>
+                                    </p>
+                                                    </div>
+                                                    <label for="location_id" class="formLabel" ><span class="wc-editable" data-pk="ws_location" data-type="text">Type of Parking</span></label>
+                                                    <select  name="location_id" id="location_id" class="form-control form-control-lg" [(ngModel)]="reserv.Tpark" name="Tpark">
+                                    
+                                                        <option value="normal_10$" class="form-control" >normal parking (10$/h)</option>
+                                                        <option value="covered_18$">covered parking (18$/h)</option>
+                                                        <option value="Professional_25$">Professional parking (25$/h)</option>				
+                                                    </select>
+            
+                            <div class="row">
+                                <div class="col-lg-6 col-xs-12">
+                                    <div class="dateTimePick">
+                                        <label><span class="wc-editable" data-pk="ws_entry_date_time" data-type="text">Entry date &amp; time</span></label>
+                                            
+                                        <div class="row">
+                                            <div class="col-sm-6 col-xs-12">
+                                                <div class="form-group">
+                                                    <div class="input-group datePick datePickFrom">
+                                                        <span class="input-group-addon">
+                                                            <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                                                        </span>
+                                
+                                                        <input type="text" id="dateOfBirth" name="dateOfBirth"  class="form-control" type="date" [(ngModel)]="reserv.dateE" name="dateE"  >
+                                                    </div>
+                                                </div>
+                                            </div>
+                                                            
+                                            <div class="col-sm-6 col-xs-12">
+                                                <div class="form-group">
+                                                    <div class="input-group timePick timePickFrom" data-rel="from">
+                                                        <span class="input-group-addon">
+                                                            <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+                                                        </span>
+                                                        <input type="time"id="input" [(ngModel)]="reserv.timeE" name="timeE"  class="form-control" value="13:00" mdbInput/>
+                                                    </div>
+                                                </div>
+                                            </div>
+            
+                                            <input type="hidden" id="cp_hour_from" name="hour_from" value="9">
+                                            <input type="hidden" id="cp_minutes_from" name="minutes_from" value="0">
+                                        </div>
+                                    </div>
+                                </div>
+            
+                                <div class="col-lg-6 col-xs-12">
+                                    <div class="dateTimePick">
+                                        <label><span class="wc-editable" data-pk="ws_exit_date_time" data-type="text">Exit date &amp; time</span></label>
+                                            
+                                        <div class="row">
+                                            <div class="col-sm-6 col-xs-12">
+                                                <div class="form-group">
+                                                    <div class="input-group datePick datePickTo">
+                                                        <span class="input-group-addon">
+                                                            <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                                                        </span>
+                                
+                                                        <input type="text" id="dateOfBirth" [(ngModel)]="reserv.dateS" name="dateS" name="dateOfBirth"  class="form-control" type="date"  >
+                                                    </div>
+                                                </div>
+                                            </div>
+                                                                
+                                            <div class="col-sm-6 col-xs-12">
+                                                <div class="form-group">
+                                                    <div class="input-group timePick timePickTo" data-rel="to">
+                                                        <span class="input-group-addon">
+                                                            <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+                                                        </span>
+                                
+                                                        <input type="time"id="input" class="form-control" [(ngModel)]="reserv.timeS" name="timeS" value="13:00" mdbInput/>
+                                                    </div>
+                                                </div>
+                                            </div>
+            
+                                            <input type="hidden" id="cp_hour_to" name="hour_to" value="9"[(ngModel)]="reserv.timeS">
+                                            <input type="hidden" id="cp_minutes_to" name="minutes_to" value="0" [(ngModel)]="reserv.timeS">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+					
+				<div class="form-group text-center">
+					<button type="submit"  (click)="openDialog()" class="btn btn-primary"><span class="wc-editable" data-pk="ws_btn_choose_your_space" data-type="action" (click)="findData()" >Choose Your Space</span></button>
+
+					<p id="pjCpSearchErrorMsg" class="crError text-danger hidden">Exit date &amp; time must be greater than entry date &amp; time.</p>
+				</div>
+			</form>
+		</div>			
+	</div>
+</div>
+</div>		</div>
+	</div>
+	<div class="main">
+	<div class="section section-about" id="section-about">
+		<div class="section-head">
+			<div class="container cms-e-section">
+				<h2 class="h2"><span class="wc-editable" data-pk="ws_about_me_title" data-type="text">About Us</span></h2>
+
+				<div class="row">
+					<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-xs-12">
+						<div class="section-subtitle"><span class="wc-editable" data-pk="ws_about_me_sub_title" data-type="plaintext">Write something about your company. This is some dummy text lorem ipsum text, consectetur&nbsp;</span></div>
+					</div>
+				</div>
+	
+				<div class="row">
+					<div class="col-lg-10 col-lg-offset-1">
+						<div class="paragragh"><span class="wc-editable" data-pk="ws_about_me_desc" data-type="plaintext">Replace this text with your company description. Write about your products and services. Deserunt, dolor eaque odit reprehenderit ducimus nostrum similique consequatur nesciunt ut officia aut eius quia, doloremque itaque a quisquam harum iusto tenetur. Explicabo eos nisi, deleniti cum veritatis dolorem inventore temporibus, quisquam est architecto qui. Odio beatae fugiat ullam incidunt.&nbsp;&nbsp;Quidem at rerum debitis, reprehenderit repudiandae dolores magnam! Explicabo eos nisi, deleniti cum veritatis dolorem inventore temporibus, quisquam est architecto qui. Odio beatae fugiat ullam incidunt. Labore distinctio dolor corporis?</span></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+		<ul class="section-about-images">
+			<li class="wc-thumb btn-gallery-replace">
+				<img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt="" data-v="" data-id="" class="wc-image" loading="lazy">
+			</li>
+
+			<li class="wc-thumb btn-gallery-replace">
+				<img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt="" data-v="" data-id="" class="wc-image" loading="lazy">
+			</li>
+
+			<li class="wc-thumb btn-gallery-replace">
+				<img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt="" data-v="" data-id="" class="wc-image" loading="lazy">
+			</li>
+
+			<li class="wc-thumb btn-gallery-replace">
+				<img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt="" data-v="" data-id="" class="wc-image" loading="lazy">
+			</li>
+		</ul>
+	</div>
+		<div class="section section-services" id="section-services">
+		<div class="container">
+			<div class="section-head">
+				<div class="cms-e-section">
+					<h2 class="h2"><span class="wc-editable" data-pk="ws_home_offers_title" data-type="text">Special Offers</span></h2>
+
+					<div class="row">
+						<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-xs-12">
+							<div class="section-subtitle"><span class="wc-editable" data-pk="ws_home_offers_desc" data-type="plaintext">Check our seasonal discounts and book car parking space while on holiday!</span></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="row columns">
+							<div class="col-md-4 col-xs-12">
+					<div class=" cms-e-section">
+						<div class="wc-thumb btn-gallery-replace">
+							<img alt="Online bookings" title="Online bookings" src="app/web/upload/medium/57e3dc424354ac14ea898c7bc32e307d1222dfe055527241752f7fd0-1280-58.jpg" class="img-responsive wc-image" loading="lazy">
+						</div>
+						
+						<div class="columns-item">
+							<h3 class="h3 wc-editable" data-model="pjContentRecord" data-field="field_91" data-type="text" data-foreign_id="39">Online bookings</h3>
+
+							<div class="offer-price">
+								<span>from</span> 
+								<strong>$ 15.00</strong>
+								<span>per day</span>
+							</div>
+
+							<div class="paragraph wc-editable" data-model="pjContentRecord" data-field="field_92" data-type="textarea" data-foreign_id="39">Suspendisse urna arcu, vehicula eu vehicula et, cursus nec lorem. Nullam lectus felis, euismod nec mollis vitae, accumsan vel ligula. Praesent rhoncus ultrices gravida. In sed sapien in purus ultricies ultrices in quis nisi.</div>
+						</div>
+													<div class="offer-actions text-center">
+								<a href="reservations.html" class="btn btn-info" target="_self">Book Now</a>
+							</div>
+												</div>
+				</div>
+								<div class="col-md-4 col-xs-12">
+					<div class=" cms-e-section">
+						<div class="wc-thumb btn-gallery-replace">
+							<img alt="Short-term" title="Short-term" src="app/web/upload/medium/57e2d2424353a414ea898c7bc32e307d1222dfe055527241752f7ad6-1280-59.jpg" class="img-responsive wc-image" loading="lazy">
+						</div>
+						
+						<div class="columns-item">
+							<h3 class="h3 wc-editable" data-model="pjContentRecord" data-field="field_91" data-type="text" data-foreign_id="40">Short-term</h3>
+
+							<div class="offer-price">
+								<span>from</span> 
+								<strong>$ 19.00</strong>
+								<span>per weekend</span>
+							</div>
+
+							<div class="paragraph wc-editable" data-model="pjContentRecord" data-field="field_92" data-type="textarea" data-foreign_id="40">Donec rhoncus maximus magna, eu tincidunt lectus iaculis at. Maecenas eros nunc, consectetur quis velit ut, vestibulum cursus arcu. Morbi pharetra quam eros, in mattis libero consequat a. Donec hendrerit pharetra est.</div>
+						</div>
+													<div class="offer-actions text-center">
+								<a href="reservations.html" class="btn btn-info" target="_self">Book Now</a>
+							</div>
+												</div>
+				</div>
+								<div class="col-md-4 col-xs-12">
+					<div class=" cms-e-section">
+						<div class="wc-thumb btn-gallery-replace">
+							<img alt="Etiam suscipit felis" title="Etiam suscipit felis" src="app/web/upload/medium/54e6d5444d54b114a6d08279c12f3479083edbe35052794975297f-1280-60.jpg" class="img-responsive wc-image" loading="lazy">
+						</div>
+						
+						<div class="columns-item">
+							<h3 class="h3 wc-editable" data-model="pjContentRecord" data-field="field_91" data-type="text" data-foreign_id="41">Etiam suscipit felis</h3>
+
+							<div class="offer-price">
+								<span>from</span> 
+								<strong>$ 9.00</strong>
+								<span>summer only</span>
+							</div>
+
+							<div class="paragraph wc-editable" data-model="pjContentRecord" data-field="field_92" data-type="textarea" data-foreign_id="41">Nullam eget auctor purus. Sed facilisis, sapien sed posuere pharetra, nisl velit dictum odio, ac pulvinar sapien leo a augue. Sed vitae euismod enim. Aliquam malesuada sem mi, a gravida neque dignissim sed.</div>
+						</div>
+													<div class="offer-actions text-center">
+								<a href="reservations.html" class="btn btn-info" target="_self">Book Now</a>
+							</div>
+												</div>
+				</div>
+							</div>
+		</div>
+	</div>
+		</div>    <footer class="footer" id="section-contact">
+	<div class="footer-nav">
+		<div class="container cms-e-section">
+			<ul>
+				<li><a routerLink="/map">Start</a></li>
+				<li><a routerLink="/reserve">Reservations</a></li>
+				<li><a routerLink="/pres">Locations</a></li>
+				<li><a routerLink="/price">Price</a></li>
+				<li><a routerLink="/contact">Contact Us</a></li>
+								</ul>
+		</div>
+	</div>
+	<div class="section">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-6 col-xs-12">
+					<p class="copyright cms-e-section" data-quick="" data-quick2="company" data-title-quick2="Company Details">© 2020 <a href="./"><span class="wc-editable" data-pk="ws_car_name" data-type="text">enetcom</span></a> | <span class="wc-editable" data-pk="ws_rights_reserved" data-type="text">All rights reserved</span></p>
+
+					<p class="credits credits-secondary"><a href="https://www.3s.com.tn/en/" target="_blank" rel="noopener">Treetronix's parking</a> </p>				</div>
+									<div class="col-sm-6 col-xs-12 text-right">
+						<ul class="socials socials-secondary cms-e-section" data-quick2="social" data-title-quick2="Social Media Profiles">
+							<li><a href="https://www.facebook.com/treetronix/?ref=br_rs" target="_blank" class="ico" rel="noopener"><i class="fa fa-facebook"></i></a></li><li><a href="https://twitter.com" target="_blank" class="ico" rel="noopener"><i class="fa fa-twitter"></i></a></li><li><a href="https://www.linkedin.com" target="_blank" class="ico" rel="noopener"><i class="fa fa-linkedin"></i></a></li><li><a href="https://www.instagram.com" target="_blank" class="ico" rel="noopener"><i class="fa fa-instagram"></i></a></li><li><a href="https://www.pinterest.com" target="_blank" class="ico" rel="noopener"><i class="fa fa-pinterest"></i></a></li>						</ul>
+					</div>
+								</div>
+		</div>
+	</div>
+</footer>	
+	</div>
+	
+	
+<div>
+		<link rel="stylesheet" type="text/css" href="http://trials.vevs.website/web-demo/car-parking-website/index.php?controller=pjFront&amp;action=pjActionLoadCss&amp;a=pjActionIndex&amp;widget=on&amp;script_id=8&amp;demo=1&amp;template=template_1&amp;theme=theme1&amp;font=Lato&amp;hmac=526ccdcf6f2d84d2748639418c6f7953" id="deferred-sheet"><link type="text/css" rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
+    </div><script src="http://trials.vevs.website/web-demo/car-parking-website/index.php?controller=pjFront&amp;a=pjActionIndex&amp;s=home&amp;action=pjActionLoadScript&amp;locale_id=4&amp;gdpr=0&amp;template=template_1&amp;theme=theme1" defer="" async=""></script><script src="../../../api/widget/script.js" defer="" async="" id="vevs-signup-widget" data-template="template_1" data-sid="8" data-demo="1"></script><script type="text/javascript" src="http://trials.vevs.website/web-demo/car-parking-website/core/third-party/jquery/3.1.1/jquery.min.js"></script><script type="text/javascript" src="http://trials.vevs.website/web-demo/car-parking-website/core/third-party/bootstrap/3.3.7/js/bootstrap.min.js"></script><script type="text/javascript" src="http://trials.vevs.website/web-demo/car-parking-website/core/third-party/validate/1.15.1/jquery.validate.min.js"></script><script type="text/javascript" src="http://trials.vevs.website/web-demo/car-parking-website/plugins/pjCms/templates/template_1/js/template.min.js?v=1.0.0"></script><script type="text/javascript" src="http://trials.vevs.website/web-demo/car-parking-website/core/third-party/moment/2.10.6/moment-with-locales.min.js"></script><script type="text/javascript" src="http://trials.vevs.website/web-demo/car-parking-website/core/third-party/bootstrap_datetimepicker/4.17.47/build/js/bootstrap-datetimepicker.min.js"></script><script type="text/javascript" async="" src="http://trials.vevs.website/web-demo/car-parking-website/app/web/js/website.min.js"></script><script type="text/javascript" async="" src="http://trials.vevs.website/web-demo/car-parking-website/app/web/js/script.min.js?v=1.0.0"></script><div class="pj-signup-overlay"></div><div class="pj-signup-dialog"></div><div class="pj-signup-trigger"></div><div role="button" tabindex="-1" id="scroll-top" class="topbutton btn-hide" aria-label="Top"><span class="fa fa-angle-double-up"></span></div></body>
