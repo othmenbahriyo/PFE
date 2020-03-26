@@ -37,13 +37,21 @@ import { MatMenuModule } from '@angular/material/menu';
 import { GparkComponent } from './gpark/gpark.component';
 import { GmapsComponent } from './gmaps/gmaps.component';
 import { TableauComponent } from './tableau/tableau.component';
-import { AuthService } from './auth.service';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgxStripeModule } from 'ngx-stripe';
 import {  ReactiveFormsModule } from '@angular/forms';
 import { NgxPayPalModule } from 'ngx-paypal';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MyDialogComponent } from './my-dialog/my-dialog.component';
+import { AdminEventsComponent } from './admin-events/admin-events.component';
+import { AuthGuard } from './guards/auth.guard';
+import { TokenInterceptorService } from './token-interceptor.service';
+import { AdminGuard } from './guards/admin.guard';
+import { AuthService } from './shared/auth.service';
+import { ReservationService } from './shared/reservation.service';
+import { ParkService } from './shared/park.service';
+
+
 
 
 
@@ -68,7 +76,8 @@ import { MyDialogComponent } from './my-dialog/my-dialog.component';
     GparkComponent,
     GmapsComponent,
     TableauComponent,
-    MyDialogComponent
+    MyDialogComponent,
+    AdminEventsComponent
   ],
   imports: [
     BrowserModule,
@@ -86,7 +95,8 @@ import { MyDialogComponent } from './my-dialog/my-dialog.component';
     BrowserAnimationsModule,
     CarouselModule.forRoot(),
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyAC_TOUb7r8JDCmM_kcd0f-vHW_mQC_X7Q'
+      apiKey: 'AIzaSyAC_TOUb7r8JDCmM_kcd0f-vHW_mQC_X7Q',
+      libraries: ['places']
     }),
     BrowserAnimationsModule,
     LayoutModule,
@@ -102,7 +112,13 @@ import { MyDialogComponent } from './my-dialog/my-dialog.component';
     MatMenuModule,
     NgxStripeModule.forRoot('pk_test_qpj9EFKeYbrkjiasiPfWlHtC00MEUchuHM')
   ],
-  providers: [AuthService],
+  providers: [AuthService, ReservationService, ParkService, AuthGuard, AdminGuard ,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptorService,
+      multi: true,
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../auth.service';
+import { AuthService } from '../shared/auth.service';
 import { Router } from '@angular/router';
+import { tokenReference } from '@angular/compiler';
 
 @Component({
   selector: 'app-register',
@@ -20,7 +21,6 @@ export class RegisterComponent implements OnInit {
     this.auth.registerUser(this.registerUserData)
     .subscribe(
       res => {
-        localStorage.setItem('token', res.token);
         this.router.navigate(['/login']);
       },
       err => console.log(err)

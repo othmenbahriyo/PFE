@@ -18,9 +18,10 @@
 <body class="" data-action="pjActionIndex" data-page="home" data-editor="http://trials.vevs.website/web-demo/car-parking-website/index.php?controller=pjCmsEditor&amp;action=pjActionLoadScript&amp;web_page_id=1&amp;locale_id=4&amp;fields=front_fields&amp;template=template_1">
 		<div class="wrapper">
         	<div class="hero-section cms-e-section" style="background-image: url(&quot;http://trials.vevs.website/web-demo/car-parking-website/app/web/upload/medium/7-431-1578941898.jpg&quot;);">
-		<img src="http://trials.vevs.website/web-demo/car-parking-website/app/web/upload/medium/7-431-1578941898.jpg" alt="" title="" data-id="431" class="hero-img hidden wc-image" loading="eager">
+		
 		
 		<div class="container">
+			<h3 class="h3" style="text-transform: uppercase;" ><span class="wc-editable" data-pk="ws_home_slide_title_1" data-type="text">welcom {{user}}</span></h3>
 			<h1 class="h1"><span class="wc-editable" data-pk="ws_home_slide_title_1" data-type="text">Book your parking space</span></h1>
 
 			<div class="hero-text-desc"><span class="wc-editable" data-pk="ws_home_slide_desc_1" data-type="plaintext">Choose location, date, time and a parking spot!</span></div>
@@ -124,7 +125,7 @@
                             </div>
 					
 				<div class="form-group text-center">
-					<button type="submit"  (click)="openDialog()" class="btn btn-primary"><span class="wc-editable" data-pk="ws_btn_choose_your_space" data-type="action" (click)="findData()" >Choose Your Space</span></button>
+					<button type="submit"  (click)="openDialog()" class="btn btn-primary"><span class="wc-editable" data-pk="ws_btn_choose_your_space" data-type="action"  >Choose Your Space</span></button>
 
 					<p id="pjCpSearchErrorMsg" class="crError text-danger hidden">Exit date &amp; time must be greater than entry date &amp; time.</p>
 				</div>

@@ -6,6 +6,7 @@ const parkSchema = new Schema({
     name: String,
     latitude: String,
     longitude: String,
+    price: Number,
   
 });
 

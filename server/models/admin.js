@@ -2,12 +2,12 @@ const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 const Schema = mongoose.Schema;
 
-const userSchema = new Schema({
+const adminSchema = new Schema({
     email: String,
     password: String,
-    session: {type: String, default: "utilisateur"},
+    session: {type: String, default: "admin"},
 });
-userSchema.pre('save',function(next){
+adminSchema.pre('save',function(next){
     const user = this;
     if(!user.isModified('password')){
         return next()
@@ -29,7 +29,7 @@ userSchema.pre('save',function(next){
 })
 
 
-userSchema.methods.comparePassword = function(candidatePassword) {
+adminSchema.methods.comparePassword = function(candidatePassword) {
     const user = this;
     return new Promise((resolve,reject)=>{
         bcrypt.compare(candidatePassword,user.password,(err,isMatch)=>{
@@ -45,4 +45,4 @@ userSchema.methods.comparePassword = function(candidatePassword) {
 
 }
 
-module.exports = mongoose.model('user', userSchema, 'users');
+module.exports = mongoose.model('admin', adminSchema, 'admins');

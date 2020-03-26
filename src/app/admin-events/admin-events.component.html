@@ -1,11 +1,10 @@
-
 <body class="" data-action="pjActionCustom1" data-page="reservations" data-editor="http://trials.vevs.website/web-demo/car-parking-website/index.php?controller=pjCmsEditor&amp;action=pjActionLoadScript&amp;web_page_id=13&amp;locale_id=4&amp;fields=front_fields&amp;template=template_1">
     <div class="wrapper">
 <div class="hero-section cms-e-section" style="background-image: url(&quot;http://trials.vevs.website/web-demo/car-parking-website/app/web/upload/medium/1920x400-137-1578941898.jpg&quot;);">
 <img src="http://trials.vevs.website/web-demo/car-parking-website/app/web/upload/medium/1920x400-137-1578941898.jpg" alt="" title="" data-id="137" class="hero-img hidden wc-image">
 
 <div class="container">
-    <h1 class="h1"><span class="wc-editable" data-pk="custom_68c1de49669a4eb915213084a137296a" data-type="text">LOGIN</span></h1>
+    <h1 class="h1"><span class="wc-editable" data-pk="custom_68c1de49669a4eb915213084a137296a" data-type="text">sign up</span></h1>
     <div class="paragragh"><span class="wc-editable" data-pk="custom_ff93be33d81a3716cbb7bd43b11015ee" data-type="plaintext"></span></div>
 </div>
 </div>
@@ -15,31 +14,41 @@
     <div class="section-content">
     <div id="pjCpContainer"><div class="row">
 <div class="col-lg-10 col-lg-offset-1 col-xs-12">
-    <div class="form cms-e-section">
-        <div class="form-group text-center">
-               
-            <div class="form-group">
-             
-              <input type="email" class="form-control" [(ngModel)]="loginUserData.email" name="email" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter username">
-              
-            </div>
-            <div class="form-group text-center">
-             
-              <input type="password" class="form-control" [(ngModel)]="loginUserData.password" name="password" id="exampleInputPassword1" placeholder="Password">
-            </div>
-           
-        
-                
-         <div class="form-group text-center">
-            <button type="submit" class="btn btn-primary" routerLink="/registre" >Sign up</button>
-             <button type="submit" class="btn btn-primary" (click)="loginUser()"  ><span class="wc-editable" data-pk="ws_btn_choose_your_space" data-type="action">Login</span></button>
-             
-             
-         </div>
-        
-         
-        </div>
-    </div>			
+       
+
+<div class="py-5">
+<div class="row">
+  <div class="col-md-6 mx-auto">
+    <span class="anchor" id="formLogin"></span>
+
+    <!-- form card login -->
+    <div class="card rounded-0">
+      <div class="card-header">
+        <h3 class="mb-0">ADD ADMIN </h3>
+      </div>
+      <div class="card-body">
+        <form class="form">
+          <div class="form-group">
+            <label for="uname1">Username</label>
+            <input type="text" [(ngModel)]="registerUserData.email" name="email" class="form-control rounded-0" required>
+          </div>
+          <div class="form-group">
+            <label>Password</label>
+            <input type="password" [(ngModel)]="registerUserData.password" name="password" class="form-control rounded-0"  required>
+          </div>
+          
+          <button type="button" (click)="registerUser()" class="btn btn-primary float-right">ADD ADMIN</button>
+        </form>
+      </div>
+      <!--/card-block-->
+    </div>
+    <!-- /form card login -->
+
+  </div>
+
+
+</div>
+</div>  
 </div>
 </div>
 </div>		</div>

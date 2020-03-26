@@ -1,6 +1,9 @@
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <mat-sidenav-container class="sidenav-container">
     <mat-sidenav #drawer class="sidenav" >
       <mat-toolbar>Menu</mat-toolbar>
@@ -134,7 +137,7 @@
         
         <div class="row">
           <div class="col-md-7">
-            <agm-map [latitude]="lat" [longitude]="lng" >
+            <agm-map  >
                 <agm-marker *ngFor="let m of marker; let i = index" zoom="zoom" [latitude]="m.latitude" [longitude]="m.latitude" [markerDraggable]="m.draggable"></agm-marker>
             </agm-map>
           </div>
@@ -144,32 +147,75 @@
                 <div class="card-header">
               <h4><strong>ajouter un parking</strong></h4>
                </div>
-              <form >
+              <form #parkForm="ngForm"  > 
+
                 <div class="form-group">
                   <label for="exampleInputEmail1">location</label>
-                  <input type="text" class="form-control" id="exampleInputEmail1" [(ngModel)]="markers.name" name="name">
+                  <input type="text" class="form-control" id="exampleInputEmail1"  [(ngModel)]="markers.name" name="name">
                  
                 </div>
                 <div class="form-group">
                   <label for="exampleInputPassword1">latitude</label>
-                  <input type="text" class="form-control" [(ngModel)]="markers.latitude" name="latitude">
+                  <input type="text" class="form-control"  [(ngModel)]="markers.latitude" name="latitude"  >
                 </div>
                 <div class="form-group">
                     <label for="exampleInputPassword1">longitude</label>
-                    <input type="text" class="form-control" [(ngModel)]="markers.longitude" name="longitude">
+                    <input type="text" class="form-control"  [(ngModel)]="markers.longitude" name="longitude">
                 </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">price</label>
+                  <input type="text" class="form-control"  [(ngModel)]="markers.price" name="price">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">id</label>
+                <input ttype="hidden" class="form-control"   [(ngModel)]="markers._id" name="_id">
+               
+              </div>
+             
                 
-                <button type="submit" class="btn btn-primary" (click)="saveParking()">Ajouter</button>
-                <button type="button" class="btn btn-primary" (click)="onDelete(markers._id)" >supprimer</button>
-                
+                <button class="btn btn-custom right" type="button" (click)="resetForm(parkForm)">Reset</button>
+        
+                <button class="btn btn-custom right"  type="button" (click)="saveParking()">add</button>
+
+                <button class="btn btn-custom right" type="submit" (click)="onSubmit(parkForm)" >Submit</button>
               </form>
             </div>
           </div>
         </div>
       </div>
     </section>
- 
   
+    <table class="table">
+      <thead>
+        <tr>
+          
+          <th scope="col">name</th>
+          <th scope="col">longitude</th>
+          <th scope="col">latitude</th>
+          <th scope="col">price</th>
+
+        
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let m of marker ">
+          <td>{{m.name}}</td>
+          <td>{{m.longitude}}</td>
+          <td>{{m.latitude}}</td>
+          <td>{{m.price}}</td>
+          <td>
+              <a class="action-btn" (click)="onEdit(m)">
+                <i class="material-icons">edit</i>
+              </a>
+              <a class="action-btn" (click)="onDeletee(m._id)">
+                <i class="material-icons">delete</i>
+              </a>
+            </td>
+       
+        </tr>
+       
+      </tbody>
+    </table>
     </mat-sidenav-content>
   </mat-sidenav-container>
   

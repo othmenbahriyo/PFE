@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../auth.service';
+import { ParkService } from '../shared/park.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -11,7 +11,7 @@ export class PresentationComponent implements OnInit {
   latitude = 36.8540568;
   longitude = 10.207159;
   marker = {}  as any ;
-  constructor(private auth: AuthService, private router: Router) { }
+  constructor(private auth: ParkService, private router: Router) { }
 
   ngOnInit(): void {
     this.auth.getListPark()

@@ -13,6 +13,9 @@ import { AdminComponent } from './admin/admin.component';
 import { MatBoardComponent } from './mat-board/mat-board.component';
 import { GparkComponent } from './gpark/gpark.component';
 import { TableauComponent } from './tableau/tableau.component';
+import { AdminEventsComponent } from './admin-events/admin-events.component';
+import { AuthGuard } from './guards/auth.guard';
+import { AdminGuard } from './guards/admin.guard';
 
 
 const routes: Routes = [
@@ -23,14 +26,15 @@ const routes: Routes = [
   {path: 'pres', component: PresentationComponent},
   {path: 'admin', component: AdminComponent},
   {path: 'dash', component: MatBoardComponent},
-  {path: 'gpark', component: GparkComponent},
+  {path: 'gpark', component: GparkComponent, canActivate: [AuthGuard]},
   {path: 'price', component: PriceComponent},
-  {path: 'reserve', component: ReservationComponent},
+  {path: 'reserve', component: ReservationComponent, canActivate: [AuthGuard]},
   {path: 'login', component: LoginComponent},
   {path: 'contact', component: ContactComponent},
   {path: 'gestion', component: GestionComponent},
-  {path: 'pay', component: PaimentComponent},
-  {path: 'map', component: MapComponent}
+  {path: 'pay', component: PaimentComponent, canActivate: [AuthGuard]},
+  {path: 'map', component: MapComponent},
+  {path: 'ad', component: AdminEventsComponent}
 ];
 
 @NgModule({

@@ -2,23 +2,27 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors')
 const path = require('path');
-const stripe = require('stripe')('sk_test_v0KTPT1aBYIxUxOgxDQg42dr00MPBE0cRR');
-const api = require('./server/routes/api');
 const port = 3000;
-
 const app = express();
+const { mongoose } = require('./db.js');
+const adminController = require('./routes/adminController');
+const parkController = require('./routes/parkController');
+const reservationController = require('./routes/reservationController');
+const userController = require('./routes/userController');
+
+
 app.use(cors())
 app.use(express.static(path.join(__dirname, 'dist')));
-
 app.use(bodyParser.json()); 
 
-app.use('/api', api);
+
+app.use('/api', adminController);
+app.use('/api', parkController);
+app.use('/api', reservationController);
+app.use('/api', userController);
 
 
- 
- app.get('*', (req, res) => {
-   res.send('hi from server');
- });
+
 
 app.listen(port, function(){
     console.log("Server running on localhost:" + port);

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../auth.service';
+import { ReservationService } from '../shared/reservation.service';
 import { Router } from '@angular/router';
 @Component({
   selector: 'app-tableau',
@@ -7,14 +7,18 @@ import { Router } from '@angular/router';
   styleUrls: ['./tableau.component.css']
 })
 export class TableauComponent implements OnInit {
-
-  constructor(private auth: AuthService, private router: Router) { }
   list = {} as any;
+
+
+  constructor(private auth: ReservationService, private router: Router) { }
+
 
   ngOnInit(): void {
     this.auth.getListReservation()
     .subscribe(res => this.list = res);
   }
+
+
 
 // tslint:disable-next-line:align
 // tslint:disable-next-line:variable-name

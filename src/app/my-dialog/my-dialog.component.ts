@@ -9,6 +9,7 @@ declare let paypal: any;
 export class MyDialogComponent implements OnInit, AfterViewChecked {
   addScript = false;
   paypalLoad = true;
+  user = localStorage.getItem('name');
   paypalConfig = {
     env: 'sandbox',
     client: {
@@ -30,11 +31,21 @@ export class MyDialogComponent implements OnInit, AfterViewChecked {
       });
     }
   };
+
+
+
+
   constructor(public dialogRef: MatDialogRef<MyDialogComponent>,
               @Inject(MAT_DIALOG_DATA) public data: any) { }
 
+
+
+
   ngOnInit(): void {
   }
+
+
+
   ngAfterViewChecked(): void {
     if (!this.addScript) {
       this.addPaypalScript().then(() => {
@@ -43,6 +54,9 @@ export class MyDialogComponent implements OnInit, AfterViewChecked {
       });
     }
   }
+
+
+
   addPaypalScript() {
     this.addScript = true;
     return new Promise((resolve, reject) => {
@@ -52,6 +66,9 @@ export class MyDialogComponent implements OnInit, AfterViewChecked {
       document.body.appendChild(scripttagElement);
     });
   }
+
+
+
 
   cancel() {
     this.dialogRef.close();
